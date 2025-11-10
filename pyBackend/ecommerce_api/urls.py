@@ -22,5 +22,6 @@ urlpatterns = [
     path('api/auth/', include('users.urls')),
     path('api/products/', include('products.urls')),
     path('api/orders/', include('orders.urls')),
+    path('api/orders', include('orders.urls')),  # Handle without trailing slash
     path('api/admin/', include('admin_urls')),
 ]

@@ -16,64 +16,68 @@ from decimal import Decimal
 @permission_classes([IsAuthenticated])
 def create_order(request):
     """Create new order"""
-    serializer = OrderCreateSerializer(data=request.data)
-    
-    if not serializer.is_valid():
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-    
-    items_data = serializer.validated_data['items']
-    shipping_address = serializer.validated_data['shipping_address']
-    
-    # Calculate total and validate stock
-    total_amount = Decimal('0.00')
-    order_items = []
-    
-    for item_data in items_data:
-        try:
-            product = Product.objects.get(pk=item_data['product'])
-            
-            if product.stock < item_data['quantity']:
-                return Response({
-                    'message': f'{product.name} is out of stock. Available: {product.stock}'
-                }, status=status.HTTP_400_BAD_REQUEST)
-            
-            item_total = Decimal(str(product.price)) * item_data['quantity']
-            total_amount += item_total
-            
-            order_items.append({
-                'product': product,
-                'product_name': product.name,
-                'quantity': item_data['quantity'],
-                'price': product.price
-            })
-            
-        except Product.DoesNotExist:
-            return Response({'message': f'Product not found'}, status=status.HTTP_404_NOT_FOUND)
-    
-    # Create order
-    order = Order.objects.create(
-        user=request.user,
-        total_amount=total_amount,
-        shipping_address=shipping_address
-    )
-    
-    # Create order items and update stock
-    for item_data in order_items:
-        OrderItem.objects.create(
-            order=order,
-            product=item_data['product'],
-            product_name=item_data['product_name'],
-            quantity=item_data['quantity'],
-            price=item_data['price']
+    try:
+        serializer = OrderCreateSerializer(data=request.data)
+        
+        if not serializer.is_valid():
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        
+        items_data = serializer.validated_data['items']
+        shipping_address = serializer.validated_data['shipping_address']
+        
+        # Calculate total and validate stock
+        total_amount = Decimal('0.00')
+        order_items = []
+        
+        for item_data in items_data:
+            try:
+                product = Product.objects.get(pk=item_data['product'])
+                
+                if product.stock < item_data['quantity']:
+                    return Response({
+                        'message': f'{product.name} is out of stock. Available: {product.stock}'
+                    }, status=status.HTTP_400_BAD_REQUEST)
+                
+                item_total = Decimal(str(product.price)) * item_data['quantity']
+                total_amount += item_total
+                
+                order_items.append({
+                    'product': product,
+                    'product_name': product.name,
+                    'quantity': item_data['quantity'],
+                    'price': product.price
+                })
+                
+            except Product.DoesNotExist:
+                return Response({'message': f'Product not found'}, status=status.HTTP_404_NOT_FOUND)
+        
+        # Create order
+        order = Order.objects.create(
+            user=request.user,
+            total_amount=total_amount,
+            shipping_address=shipping_address
         )
         
-        # Update stock
-        product = item_data['product']
-        product.stock -= item_data['quantity']
-        product.save()
+        # Create order items and update stock
+        for item_data in order_items:
+            OrderItem.objects.create(
+                order=order,
+                product=item_data['product'],
+                product_name=item_data['product_name'],
+                quantity=item_data['quantity'],
+                price=item_data['price']
+            )
+            
+            # Update stock
+            product = item_data['product']
+            product.stock -= item_data['quantity']
+            product.save()
+        
+        serializer = OrderSerializer(order)
+        return Response({'order': serializer.data}, status=status.HTTP_201_CREATED)
     
-    serializer = OrderSerializer(order)
-    return Response(serializer.data, status=status.HTTP_201_CREATED)
+    except Exception as e:
+        return Response({'message': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
 @api_view(['GET'])

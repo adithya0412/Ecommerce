@@ -66,4 +66,5 @@ class OrderCreateSerializer(serializers.Serializer):
         for field in required_fields:
             if field not in value:
                 raise serializers.ValidationError(f"{field} is required")
+        # Optional: state field
         return value

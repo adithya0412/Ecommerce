@@ -53,7 +53,7 @@ def get_product_by_id(request, pk):
     try:
         product = Product.objects.get(pk=pk, is_deleted=False)
         serializer = ProductSerializer(product)
-        return Response(serializer.data)
+        return Response({'product': serializer.data})
     except Product.DoesNotExist:
         return Response({'message': 'Product not found'}, status=status.HTTP_404_NOT_FOUND)
 
