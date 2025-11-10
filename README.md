@@ -1,4 +1,4 @@
-# 🛍️ ShopZONE - Full-Stack E-Commerce Application
+# 🛍️ ShopMart - Full-Stack E-Commerce Application
 
 A beautiful, modern e-commerce platform with **Glass Morphism Design** featuring a comprehensive **Admin Panel** for product and order management. Built with the MERN stack (MongoDB, Express, React, Node.js) and styled with TailwindCSS.
 

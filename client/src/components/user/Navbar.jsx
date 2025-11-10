@@ -26,7 +26,7 @@ export default function Navbar() {
             <div className="w-10 h-10 rounded-full bg-gradient-to-r from-orange-500 to-orange-600 flex items-center justify-center">
               <span className="text-white font-bold text-xl">SG</span>
             </div>
-            <span className="text-gray-800 text-xl font-bold">ShopZONE</span>
+            <span className="text-gray-800 text-xl font-bold">ShopMart</span>
           </Link>
 
           {/* Navigation Links */}

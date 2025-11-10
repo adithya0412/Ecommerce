@@ -1,6 +1,6 @@
 # 📡 API Documentation
 
-Complete API reference for ShopZONE E-Commerce Platform
+Complete API reference for ShopMart E-Commerce Platform
 
 ## Base URL
 

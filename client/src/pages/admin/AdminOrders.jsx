@@ -184,7 +184,7 @@ export default function AdminOrders() {
                         <input
                           type="checkbox"
                           checked={selectedOrders.includes(order._id)}
-                          onChange={() => toggleOrderSelection(order._id)}
+                          onChange={() => toggleSelectOrder(order._id)}
                           className="w-4 h-4 text-orange-600 rounded"
                         />
                       </td>

@@ -149,7 +149,7 @@ def get_admin_order_by_id(request, pk):
     try:
         order = Order.objects.get(pk=pk)
         serializer = OrderSerializer(order)
-        return Response(serializer.data)
+        return Response({'order': serializer.data})
     except Order.DoesNotExist:
         return Response({'message': 'Order not found'}, status=status.HTTP_404_NOT_FOUND)
 

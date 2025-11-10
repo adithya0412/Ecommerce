@@ -1,6 +1,6 @@
 # 🚀 Quick Start Guide
 
-Follow these simple steps to get the ShopZONE E-Commerce application running:
+Follow these simple steps to get the ShopMart E-Commerce application running:
 
 ## Step 1: Install Backend Dependencies
 

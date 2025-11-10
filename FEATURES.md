@@ -1,8 +1,8 @@
-# ✨ ShopZONE E-Commerce - Feature Summary
+# ✨ ShopMart E-Commerce - Feature Summary
 
 ## 🎯 Project Overview
 
-**ShopZONE** is a full-stack e-commerce application featuring a stunning **Glass Morphism UI** design with a comprehensive **Admin Panel** for managing products and orders. Built using the MERN stack with modern best practices.
+**ShopMart** is a full-stack e-commerce application featuring a stunning **Glass Morphism UI** design with a comprehensive **Admin Panel** for managing products and orders. Built using the MERN stack with modern best practices.
 
 ---
 

@@ -22,6 +22,13 @@ def register(request):
             'token': str(refresh.access_token),
         }, status=status.HTTP_201_CREATED)
     
+    # Check for duplicate email error
+    if 'email' in serializer.errors:
+        email_errors = serializer.errors['email']
+        for error in email_errors:
+            if 'already exists' in str(error) or 'unique' in str(error).lower():
+                return Response({'message': 'User already exists with this email'}, status=status.HTTP_400_BAD_REQUEST)
+    
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 

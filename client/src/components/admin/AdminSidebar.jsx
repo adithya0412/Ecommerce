@@ -26,7 +26,7 @@ export default function AdminSidebar() {
             <span className="text-white font-bold text-xl">SG</span>
           </div>
           <div>
-            <h1 className="text-xl font-bold text-gray-800">ShopZONE</h1>
+            <h1 className="text-xl font-bold text-gray-800">ShopMart</h1>
             <p className="text-xs text-gray-500">Admin Panel</p>
           </div>
         </div>

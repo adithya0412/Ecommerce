@@ -1,6 +1,6 @@
 # 🚀 Deployment Guide
 
-Complete guide for deploying ShopZONE E-Commerce to production.
+Complete guide for deploying ShopMart E-Commerce to production.
 
 ## 📋 Pre-Deployment Checklist
 
@@ -108,7 +108,7 @@ mongorestore --uri="<your-atlas-connection-string>" ./backup/ecommerce
 
 3. **Configure Service**
 
-   - Name: `ShopZONE-backend`
+   - Name: `ShopMart-backend`
    - Environment: `Node`
    - Build Command: `npm install`
    - Start Command: `node server/index.js`
@@ -128,7 +128,7 @@ mongorestore --uri="<your-atlas-connection-string>" ./backup/ecommerce
 heroku login
 
 # Create app
-heroku create ShopZONE-backend
+heroku create ShopMart-backend
 
 # Set environment variables
 heroku config:set NODE_ENV=production
