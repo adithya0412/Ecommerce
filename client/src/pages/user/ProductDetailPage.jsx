@@ -53,7 +53,7 @@ export default function ProductDetailPage() {
           </h2>
           <Link
             to="/products"
-            className="text-orange-600 hover:text-orange-700"
+            className="text-purple-600 hover:text-purple-700"
           >
             Back to Products
           </Link>
@@ -67,7 +67,7 @@ export default function ProductDetailPage() {
       <div className="max-w-7xl mx-auto">
         <Link
           to="/products"
-          className="inline-flex items-center text-white hover:text-orange-300 transition mb-8"
+          className="inline-flex items-center text-white hover:text-purple-300 transition mb-8"
         >
           <ArrowLeft className="mr-2" size={20} />
           Back to Products
@@ -108,7 +108,7 @@ export default function ProductDetailPage() {
 
             {/* Product Info */}
             <div>
-              <div className="inline-block bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-semibold mb-4">
+              <div className="inline-block bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-semibold mb-4">
                 {product.category}
               </div>
               <h1 className="text-4xl font-bold text-gray-800 mb-4">
@@ -122,7 +122,7 @@ export default function ProductDetailPage() {
                 <div className="grid grid-cols-2 gap-4 mb-4">
                   <div>
                     <p className="text-gray-500 text-sm">Price</p>
-                    <p className="text-3xl font-bold text-orange-600">
+                    <p className="text-3xl font-bold text-purple-600">
                       ₹{product.price}
                     </p>
                   </div>
@@ -137,7 +137,7 @@ export default function ProductDetailPage() {
                   <Package className="text-gray-500" size={20} />
                   <span className="text-gray-700">
                     {product.stock > 0 ? (
-                      <span className="text-orange-600 font-semibold">
+                      <span className="text-purple-600 font-semibold">
                         {product.stock} in stock
                       </span>
                     ) : (
@@ -179,7 +179,7 @@ export default function ProductDetailPage() {
 
                   <button
                     onClick={handleAddToCart}
-                    className="w-full py-4 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-xl font-semibold text-lg hover:shadow-xl transform hover:scale-105 transition duration-300 flex items-center justify-center space-x-2"
+                    className="w-full py-4 bg-gradient-to-r from-purple-500 to-purple-600 text-white rounded-xl font-semibold text-lg hover:shadow-xl transform hover:scale-105 transition duration-300 flex items-center justify-center space-x-2"
                   >
                     <ShoppingCart size={24} />
                     <span>Add to Cart</span>

@@ -22,19 +22,19 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-orange-50 via-white to-orange-100">
+      <section className="relative h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-purple-50 via-white to-purple-100">
         <div className="absolute inset-0 bg-white bg-opacity-40"></div>
         <div className="relative z-10 text-center px-4">
           <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6 animate-float">
             Welcome to{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-600">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-purple-600">
               ShopMart
             </span>
           </h1>
 
           <Link
             to="/products"
-            className="inline-block px-4 py-2 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-full font-semibold text-lg hover:shadow-2xl transform hover:scale-105 transition duration-300"
+            className="inline-block px-4 py-2 bg-gradient-to-r from-purple-500 to-purple-600 text-white rounded-full font-semibold text-lg hover:shadow-2xl transform hover:scale-105 transition duration-300"
           >
             Shop Now
           </Link>
@@ -42,7 +42,7 @@ export default function HomePage() {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 px-4 bg-gradient-to-b from-orange-100 to-white">
+      <section className="py-20 px-4 bg-gradient-to-b from-purple-100 to-white">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl font-bold text-center text-gray-800 mb-16">
             Why Choose Us
@@ -74,7 +74,7 @@ export default function HomePage() {
                 key={feature.title}
                 className="glass-card p-8 rounded-2xl text-center transform hover:scale-105 transition duration-300"
               >
-                <feature.icon className="w-16 h-16 mx-auto mb-4 text-orange-600" />
+                <feature.icon className="w-16 h-16 mx-auto mb-4 text-purple-600" />
                 <h3 className="text-xl font-semibold text-gray-800 mb-2">
                   {feature.title}
                 </h3>
@@ -86,7 +86,7 @@ export default function HomePage() {
       </section>
 
       {/* Featured Products */}
-      <section className="py-20 px-4 bg-gradient-to-b from-white to-orange-50">
+      <section className="py-20 px-4 bg-gradient-to-b from-white to-purple-50">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl font-bold text-center text-gray-800 mb-16">
             Featured Products
@@ -113,7 +113,7 @@ export default function HomePage() {
                     {product.description}
                   </p>
                   <div className="flex justify-between items-center">
-                    <span className="text-2xl font-bold text-orange-600">
+                    <span className="text-2xl font-bold text-purple-600">
                       ₹{product.price}
                     </span>
                     <span className="text-sm text-gray-500">
@@ -127,7 +127,7 @@ export default function HomePage() {
           <div className="text-center mt-12">
             <Link
               to="/products"
-              className="inline-block px-8 py-3 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition"
+              className="inline-block px-8 py-3 bg-gradient-to-r from-purple-500 to-purple-600 text-white rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition"
             >
               View All Products
             </Link>

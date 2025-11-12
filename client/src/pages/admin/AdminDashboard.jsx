@@ -28,7 +28,7 @@ export default function AdminDashboard() {
   if (loading) {
     return (
       <div className="flex items-center justify-center h-96">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-orange-600"></div>
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-600"></div>
       </div>
     );
   }
@@ -44,7 +44,7 @@ export default function AdminDashboard() {
 
       {/* Stats Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-        <div className="bg-white rounded-xl shadow-md p-6 border-l-4 border-orange-500">
+        <div className="bg-white rounded-xl shadow-md p-6 border-l-4 border-purple-500">
           <div className="flex items-center justify-between">
             <div>
               <p className="text-gray-600 text-sm font-medium mb-2">
@@ -54,8 +54,8 @@ export default function AdminDashboard() {
                 {stats.totalOrders}
               </p>
             </div>
-            <div className="bg-orange-100 p-3 rounded-full">
-              <ShoppingBag className="text-orange-600" size={24} />
+            <div className="bg-purple-100 p-3 rounded-full">
+              <ShoppingBag className="text-purple-600" size={24} />
             </div>
           </div>
         </div>
@@ -76,7 +76,7 @@ export default function AdminDashboard() {
           </div>
         </div>
 
-        <div className="bg-white rounded-xl shadow-md p-6 border-l-4 border-orange-500">
+        <div className="bg-white rounded-xl shadow-md p-6 border-l-4 border-purple-500">
           <div className="flex items-center justify-between">
             <div>
               <p className="text-gray-600 text-sm font-medium mb-2">
@@ -86,13 +86,13 @@ export default function AdminDashboard() {
                 ₹{stats.totalRevenue.toFixed(2)}
               </p>
             </div>
-            <div className="bg-orange-100 p-3 rounded-full">
-              <DollarSign className="text-orange-600" size={24} />
+            <div className="bg-purple-100 p-3 rounded-full">
+              <DollarSign className="text-purple-600" size={24} />
             </div>
           </div>
         </div>
 
-        <div className="bg-white rounded-xl shadow-md p-6 border-l-4 border-orange-500">
+        <div className="bg-white rounded-xl shadow-md p-6 border-l-4 border-purple-500">
           <div className="flex items-center justify-between">
             <div>
               <p className="text-gray-600 text-sm font-medium mb-2">
@@ -102,8 +102,8 @@ export default function AdminDashboard() {
                 {stats.totalProducts}
               </p>
             </div>
-            <div className="bg-orange-100 p-3 rounded-full">
-              <Package className="text-orange-600" size={24} />
+            <div className="bg-purple-100 p-3 rounded-full">
+              <Package className="text-purple-600" size={24} />
             </div>
           </div>
         </div>
@@ -134,13 +134,13 @@ export default function AdminDashboard() {
           <div className="space-y-3">
             <Link
               to="/admin/products/new"
-              className="block w-full py-3 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-lg font-semibold text-center hover:shadow-lg transition"
+              className="block w-full py-3 bg-gradient-to-r from-purple-500 to-purple-600 text-white rounded-lg font-semibold text-center hover:shadow-lg transition"
             >
               Add New Product
             </Link>
             <Link
               to="/admin/orders"
-              className="block w-full py-3 bg-orange-500 text-white rounded-lg font-semibold text-center hover:bg-orange-600 transition"
+              className="block w-full py-3 bg-purple-500 text-white rounded-lg font-semibold text-center hover:bg-purple-600 transition"
             >
               View All Orders
             </Link>
@@ -184,7 +184,7 @@ export default function AdminDashboard() {
                   <td className="py-3 px-4">
                     <Link
                       to={`/admin/orders/${order._id}`}
-                      className="text-orange-600 hover:text-orange-700 font-medium"
+                      className="text-purple-600 hover:text-purple-700 font-medium"
                     >
                       {order.orderId}
                     </Link>
@@ -197,11 +197,11 @@ export default function AdminDashboard() {
                     <span
                       className={`px-3 py-1 rounded-full text-sm font-semibold ${
                         order.status === "Delivered"
-                          ? "bg-orange-100 text-orange-800"
+                          ? "bg-purple-100 text-purple-800"
                           : order.status === "Shipped"
-                          ? "bg-orange-100 text-orange-800"
+                          ? "bg-purple-100 text-purple-800"
                           : order.status === "Processing"
-                          ? "bg-orange-100 text-orange-800"
+                          ? "bg-purple-100 text-purple-800"
                           : order.status === "Pending"
                           ? "bg-yellow-100 text-yellow-800"
                           : "bg-red-100 text-red-800"

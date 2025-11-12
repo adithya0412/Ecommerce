@@ -77,9 +77,9 @@ export default function AdminOrderDetail() {
   const getStatusColor = (status) => {
     const colors = {
       Pending: "bg-yellow-100 text-yellow-800",
-      Processing: "bg-orange-100 text-orange-800",
-      Shipped: "bg-orange-100 text-orange-800",
-      Delivered: "bg-orange-100 text-orange-800",
+      Processing: "bg-purple-100 text-purple-800",
+      Shipped: "bg-purple-100 text-purple-800",
+      Delivered: "bg-purple-100 text-purple-800",
       Cancelled: "bg-red-100 text-red-800",
     };
     return colors[status] || "bg-gray-100 text-gray-800";
@@ -88,7 +88,7 @@ export default function AdminOrderDetail() {
   if (loading) {
     return (
       <div className="flex items-center justify-center h-96">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-orange-600"></div>
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-600"></div>
       </div>
     );
   }
@@ -152,7 +152,7 @@ export default function AdminOrderDetail() {
               </div>
               <div>
                 <p className="text-gray-600 text-sm mb-1">Total Amount</p>
-                <p className="text-3xl font-bold text-orange-600">
+                <p className="text-3xl font-bold text-purple-600">
                   ₹{order.totalAmount.toFixed(2)}
                 </p>
               </div>
@@ -183,7 +183,7 @@ export default function AdminOrderDetail() {
                     <p className="text-gray-600 text-sm">
                       Price: ₹{item.price.toFixed(2)} each
                     </p>
-                    <p className="font-bold text-orange-600 mt-1">
+                    <p className="font-bold text-purple-600 mt-1">
                       Total: ₹{(item.price * item.quantity).toFixed(2)}
                     </p>
                   </div>
@@ -238,7 +238,7 @@ export default function AdminOrderDetail() {
               <button
                 onClick={handleUpdateStatus}
                 disabled={savingStatus || newStatus === order.status}
-                className="w-full flex items-center justify-center space-x-2 py-3 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-lg font-semibold hover:shadow-lg transition disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full flex items-center justify-center space-x-2 py-3 bg-gradient-to-r from-purple-500 to-purple-600 text-white rounded-lg font-semibold hover:shadow-lg transition disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 <Save size={18} />
                 <span>{savingStatus ? "Updating..." : "Update Status"}</span>
@@ -262,7 +262,7 @@ export default function AdminOrderDetail() {
               <button
                 type="submit"
                 disabled={savingNote || !note.trim()}
-                className="w-full py-3 bg-orange-500 text-white rounded-lg font-semibold hover:bg-orange-600 transition disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full py-3 bg-purple-500 text-white rounded-lg font-semibold hover:bg-purple-600 transition disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {savingNote ? "Adding..." : "Add Note"}
               </button>

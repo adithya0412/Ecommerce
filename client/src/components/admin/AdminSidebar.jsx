@@ -42,7 +42,7 @@ export default function AdminSidebar() {
                 to={item.path}
                 className={`flex items-center space-x-3 px-4 py-3 rounded-lg transition ${
                   isActive
-                    ? "bg-gradient-to-r from-orange-500 to-orange-600 text-white"
+                    ? "bg-gradient-to-r from-purple-500 to-purple-600 text-white"
                     : "text-gray-600 hover:bg-gray-100"
                 }`}
               >

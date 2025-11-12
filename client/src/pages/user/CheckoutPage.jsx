@@ -181,7 +181,7 @@ export default function CheckoutPage() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full py-4 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-xl font-semibold text-lg hover:shadow-xl transform hover:scale-105 transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                  className="w-full py-4 bg-gradient-to-r from-purple-500 to-purple-600 text-white rounded-xl font-semibold text-lg hover:shadow-xl transform hover:scale-105 transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
                 >
                   {loading ? "Placing Order..." : "Place Order"}
                 </button>
@@ -217,7 +217,7 @@ export default function CheckoutPage() {
                       <p className="text-gray-600 text-xs">
                         Qty: {item.quantity}
                       </p>
-                      <p className="font-bold text-orange-600 text-sm">
+                      <p className="font-bold text-purple-600 text-sm">
                         ₹{(item.product.price * item.quantity).toFixed(2)}
                       </p>
                     </div>
@@ -232,12 +232,12 @@ export default function CheckoutPage() {
                 </div>
                 <div className="flex justify-between text-gray-700">
                   <span>Shipping</span>
-                  <span className="text-orange-600">FREE</span>
+                  <span className="text-purple-600">FREE</span>
                 </div>
                 <div className="border-t border-gray-300 pt-3">
                   <div className="flex justify-between text-xl font-bold text-gray-800">
                     <span>Total</span>
-                    <span className="text-orange-600">
+                    <span className="text-purple-600">
                       ₹{getTotalPrice().toFixed(2)}
                     </span>
                   </div>

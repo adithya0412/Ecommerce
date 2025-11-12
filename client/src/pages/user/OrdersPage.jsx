@@ -27,9 +27,9 @@ export default function OrdersPage() {
   const getStatusColor = (status) => {
     const colors = {
       Pending: "bg-yellow-100 text-yellow-800",
-      Processing: "bg-orange-100 text-orange-800",
-      Shipped: "bg-orange-100 text-orange-800",
-      Delivered: "bg-orange-100 text-orange-800",
+      Processing: "bg-purple-100 text-purple-800",
+      Shipped: "bg-purple-100 text-purple-800",
+      Delivered: "bg-purple-100 text-purple-800",
       Cancelled: "bg-red-100 text-red-800",
     };
     return colors[status] || "bg-gray-100 text-gray-800";
@@ -85,7 +85,7 @@ export default function OrdersPage() {
                   >
                     {order.status}
                   </span>
-                  <span className="text-2xl font-bold text-orange-600">
+                  <span className="text-2xl font-bold text-purple-600">
                     ₹{order.totalAmount.toFixed(2)}
                   </span>
                 </div>
@@ -107,7 +107,7 @@ export default function OrdersPage() {
                       <p className="text-gray-600 text-sm">
                         Quantity: {item.quantity}
                       </p>
-                      <p className="font-bold text-orange-600">
+                      <p className="font-bold text-purple-600">
                         ₹{(item.price * item.quantity).toFixed(2)}
                       </p>
                     </div>

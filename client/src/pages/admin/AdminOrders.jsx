@@ -77,9 +77,9 @@ export default function AdminOrders() {
   const getStatusColor = (status) => {
     const colors = {
       Pending: "bg-yellow-100 text-yellow-800",
-      Processing: "bg-orange-100 text-orange-800",
-      Shipped: "bg-orange-100 text-orange-800",
-      Delivered: "bg-orange-100 text-orange-800",
+      Processing: "bg-purple-100 text-purple-800",
+      Shipped: "bg-purple-100 text-purple-800",
+      Delivered: "bg-purple-100 text-purple-800",
       Cancelled: "bg-red-100 text-red-800",
     };
     return colors[status] || "bg-gray-100 text-gray-800";
@@ -95,7 +95,7 @@ export default function AdminOrders() {
         {selectedOrders.length > 0 && (
           <button
             onClick={handleExport}
-            className="flex items-center space-x-2 px-6 py-3 bg-orange-500 text-white rounded-lg font-semibold hover:bg-orange-600 transition"
+            className="flex items-center space-x-2 px-6 py-3 bg-purple-500 text-white rounded-lg font-semibold hover:bg-purple-600 transition"
           >
             <Download size={20} />
             <span>Export ({selectedOrders.length})</span>
@@ -134,7 +134,7 @@ export default function AdminOrders() {
       <div className="bg-white rounded-xl shadow-md overflow-hidden">
         {loading ? (
           <div className="flex items-center justify-center h-64">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-orange-600"></div>
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-600"></div>
           </div>
         ) : orders.length === 0 ? (
           <div className="text-center py-12">
@@ -185,13 +185,13 @@ export default function AdminOrders() {
                           type="checkbox"
                           checked={selectedOrders.includes(order._id)}
                           onChange={() => toggleSelectOrder(order._id)}
-                          className="w-4 h-4 text-orange-600 rounded"
+                          className="w-4 h-4 text-purple-600 rounded"
                         />
                       </td>
                       <td className="py-4 px-6">
                         <Link
                           to={`/admin/orders/${order._id}`}
-                          className="font-semibold text-orange-600 hover:text-orange-700"
+                          className="font-semibold text-purple-600 hover:text-purple-700"
                         >
                           {order.orderId}
                         </Link>
@@ -206,7 +206,7 @@ export default function AdminOrders() {
                           </p>
                         </div>
                       </td>
-                      <td className="py-4 px-6 font-semibold text-orange-600">
+                      <td className="py-4 px-6 font-semibold text-purple-600">
                         ₹{order.totalAmount.toFixed(2)}
                       </td>
                       <td className="py-4 px-6">
@@ -229,7 +229,7 @@ export default function AdminOrders() {
                       <td className="py-4 px-6">
                         <Link
                           to={`/admin/orders/${order._id}`}
-                          className="p-2 text-orange-600 hover:bg-orange-100 rounded-lg transition inline-flex items-center"
+                          className="p-2 text-purple-600 hover:bg-purple-100 rounded-lg transition inline-flex items-center"
                           title="View Details"
                         >
                           <Eye size={18} />
@@ -251,7 +251,7 @@ export default function AdminOrders() {
                       onClick={() => fetchOrders(page)}
                       className={`px-4 py-2 rounded-lg font-semibold transition ${
                         pagination.page === page
-                          ? "bg-gradient-to-r from-orange-500 to-orange-600 text-white"
+                          ? "bg-gradient-to-r from-purple-500 to-purple-600 text-white"
                           : "bg-gray-200 text-gray-700 hover:bg-gray-300"
                       }`}
                     >

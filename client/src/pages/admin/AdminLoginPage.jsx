@@ -39,10 +39,10 @@ export default function AdminLoginPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-400 via-orange-500 to-orange-600 flex items-center justify-center px-4">
+    <div className="min-h-screen bg-gradient-to-br from-purple-400 via-purple-500 to-purple-600 flex items-center justify-center px-4">
       <div className="bg-white rounded-2xl shadow-2xl p-8 max-w-md w-full">
         <div className="text-center mb-8">
-          <div className="w-20 h-20 rounded-full bg-gradient-to-r from-orange-600 to-orange-700 flex items-center justify-center mx-auto mb-4">
+          <div className="w-20 h-20 rounded-full bg-gradient-to-r from-purple-600 to-purple-700 flex items-center justify-center mx-auto mb-4">
             <Shield className="text-white" size={40} />
           </div>
           <h1 className="text-3xl font-bold text-gray-800 mb-2">
@@ -91,18 +91,18 @@ export default function AdminLoginPage() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-3 bg-gradient-to-r from-orange-600 to-orange-700 text-white rounded-lg font-semibold hover:shadow-lg transform hover:scale-105 transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+            className="w-full py-3 bg-gradient-to-r from-purple-600 to-purple-700 text-white rounded-lg font-semibold hover:shadow-lg transform hover:scale-105 transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
           >
             {loading ? "Signing in..." : "Sign In as Admin"}
           </button>
         </form>
 
-        <div className="mt-6 bg-orange-50 border border-orange-200 rounded-lg p-4">
-          <p className="text-sm text-orange-800 font-semibold mb-1">
+        <div className="mt-6 bg-purple-50 border border-purple-200 rounded-lg p-4">
+          <p className="text-sm text-purple-800 font-semibold mb-1">
             Demo Admin Credentials
           </p>
-          <p className="text-xs text-orange-600">Email: admin@example.com</p>
-          <p className="text-xs text-orange-600">Password: Admin@12345</p>
+          <p className="text-xs text-purple-600">Email: admin@example.com</p>
+          <p className="text-xs text-purple-600">Password: Admin@12345</p>
         </div>
       </div>
     </div>

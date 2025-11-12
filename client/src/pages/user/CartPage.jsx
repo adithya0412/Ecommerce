@@ -19,7 +19,7 @@ export default function CartPage() {
           </p>
           <Link
             to="/products"
-            className="inline-block px-8 py-3 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-full font-semibold hover:shadow-lg transition"
+            className="inline-block px-8 py-3 bg-gradient-to-r from-purple-500 to-purple-600 text-white rounded-full font-semibold hover:shadow-lg transition"
           >
             Browse Products
           </Link>
@@ -56,7 +56,7 @@ export default function CartPage() {
                     <div>
                       <Link
                         to={`/products/${item.product._id}`}
-                        className="hover:text-orange-600 transition"
+                        className="hover:text-purple-600 transition"
                       >
                         <h3 className="text-xl font-semibold text-gray-800">
                           {item.product.name}
@@ -99,7 +99,7 @@ export default function CartPage() {
                       </button>
                     </div>
                     <div className="text-right">
-                      <p className="text-2xl font-bold text-orange-600">
+                      <p className="text-2xl font-bold text-purple-600">
                         ₹{(item.product.price * item.quantity).toFixed(2)}
                       </p>
                       <p className="text-sm text-gray-500">
@@ -126,12 +126,12 @@ export default function CartPage() {
                 </div>
                 <div className="flex justify-between text-gray-700">
                   <span>Shipping</span>
-                  <span className="text-orange-600">FREE</span>
+                  <span className="text-purple-600">FREE</span>
                 </div>
                 <div className="border-t border-gray-300 pt-3">
                   <div className="flex justify-between text-xl font-bold text-gray-800">
                     <span>Total</span>
-                    <span className="text-orange-600">
+                    <span className="text-purple-600">
                       ₹{getTotalPrice().toFixed(2)}
                     </span>
                   </div>
@@ -140,7 +140,7 @@ export default function CartPage() {
 
               <Link
                 to="/checkout"
-                className="block w-full py-4 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-xl font-semibold text-center hover:shadow-xl transform hover:scale-105 transition duration-300"
+                className="block w-full py-4 bg-gradient-to-r from-purple-500 to-purple-600 text-white rounded-xl font-semibold text-center hover:shadow-xl transform hover:scale-105 transition duration-300"
               >
                 Proceed to Checkout
               </Link>

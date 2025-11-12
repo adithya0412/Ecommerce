@@ -67,7 +67,7 @@ export default function AdminProducts() {
         </div>
         <Link
           to="/admin/products/new"
-          className="flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-lg font-semibold hover:shadow-lg transition"
+          className="flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-purple-500 to-purple-600 text-white rounded-lg font-semibold hover:shadow-lg transition"
         >
           <Plus size={20} />
           <span>Add Product</span>
@@ -105,7 +105,7 @@ export default function AdminProducts() {
       <div className="bg-white rounded-xl shadow-md overflow-hidden">
         {loading ? (
           <div className="flex items-center justify-center h-64">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-orange-600"></div>
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-600"></div>
           </div>
         ) : products.length === 0 ? (
           <div className="text-center py-12">
@@ -160,14 +160,14 @@ export default function AdminProducts() {
                           </p>
                         </div>
                       </td>
-                      <td className="py-4 px-6 font-semibold text-orange-600">
+                      <td className="py-4 px-6 font-semibold text-purple-600">
                         ₹{product.price}
                       </td>
                       <td className="py-4 px-6">
                         <span
                           className={`px-3 py-1 rounded-full text-sm font-semibold ${
                             product.stock > 10
-                              ? "bg-orange-100 text-orange-800"
+                              ? "bg-purple-100 text-purple-800"
                               : product.stock > 0
                               ? "bg-yellow-100 text-yellow-800"
                               : "bg-red-100 text-red-800"
@@ -185,7 +185,7 @@ export default function AdminProducts() {
                         <div className="flex space-x-2">
                           <Link
                             to={`/admin/products/edit/${product._id}`}
-                            className="p-2 text-orange-600 hover:bg-orange-100 rounded-lg transition"
+                            className="p-2 text-purple-600 hover:bg-purple-100 rounded-lg transition"
                             title="Edit"
                           >
                             <Edit size={18} />
@@ -215,7 +215,7 @@ export default function AdminProducts() {
                       onClick={() => fetchProducts(page)}
                       className={`px-4 py-2 rounded-lg font-semibold transition ${
                         pagination.page === page
-                          ? "bg-gradient-to-r from-orange-500 to-orange-600 text-white"
+                          ? "bg-gradient-to-r from-purple-500 to-purple-600 text-white"
                           : "bg-gray-200 text-gray-700 hover:bg-gray-300"
                       }`}
                     >

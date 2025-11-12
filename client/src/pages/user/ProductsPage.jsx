@@ -126,7 +126,7 @@ export default function ProductsPage() {
                   </Link>
                   <div className="p-4">
                     <Link to={`/products/${product._id}`}>
-                      <h3 className="text-lg font-semibold text-gray-800 mb-2 hover:text-orange-600 transition">
+                      <h3 className="text-lg font-semibold text-gray-800 mb-2 hover:text-purple-600 transition">
                         {product.name}
                       </h3>
                     </Link>
@@ -134,7 +134,7 @@ export default function ProductsPage() {
                       {product.description}
                     </p>
                     <div className="flex justify-between items-center mb-3">
-                      <span className="text-2xl font-bold text-orange-600">
+                      <span className="text-2xl font-bold text-purple-600">
                         ₹{product.price}
                       </span>
                       <span className="text-xs bg-gray-100 px-2 py-1 rounded-full">
@@ -147,7 +147,7 @@ export default function ProductsPage() {
                       className={`w-full py-2 rounded-lg font-semibold transition ${
                         product.stock === 0
                           ? "bg-gray-300 text-gray-500 cursor-not-allowed"
-                          : "bg-gradient-to-r from-orange-500 to-orange-600 text-white hover:shadow-lg"
+                          : "bg-gradient-to-r from-purple-500 to-purple-600 text-white hover:shadow-lg"
                       }`}
                     >
                       {product.stock === 0 ? "Out of Stock" : "Add to Cart"}
@@ -167,7 +167,7 @@ export default function ProductsPage() {
                       onClick={() => fetchProducts(page)}
                       className={`px-4 py-2 rounded-lg font-semibold transition ${
                         pagination.page === page
-                          ? "bg-gradient-to-r from-orange-500 to-orange-600 text-white"
+                          ? "bg-gradient-to-r from-purple-500 to-purple-600 text-white"
                           : "glass-card text-gray-700 hover:bg-gray-100"
                       }`}
                     >
