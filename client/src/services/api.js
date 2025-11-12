@@ -1,7 +1,17 @@
 import axios from "axios";
 
+// Determine the base URL based on environment
+const getBaseURL = () => {
+  if (typeof window !== 'undefined' && window.location.hostname === 'localhost') {
+    // Development mode
+    return "/api";
+  }
+  // Production mode - use full backend URL
+  return "https://ecommerce-backend-th7i.onrender.com/api";
+};
+
 const api = axios.create({
-  baseURL: "/api",
+  baseURL: getBaseURL(),
   headers: {
     "Content-Type": "application/json",
   },
